@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
 
 	def create
 		@article = Article.new(article_params)
-			#Same as belwo
+			#Same as below
 			#title: params[:article][:title],
 			#body: params[:article][:body])
 		@article.save
