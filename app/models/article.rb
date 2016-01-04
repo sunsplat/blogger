@@ -4,7 +4,9 @@ class Article < ActiveRecord::Base
 	has_many :tags, through: :taggings
 
 	def tag_list
-	  tags.join(", ")
+	  self.tags.collect do |tag|
+	    tag.name
+	  end.join(", ")
 	end
 
 	def tag_list=(tags_string)
